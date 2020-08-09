@@ -1,12 +1,10 @@
 # Search !
-Challenge description
 ![alt text](challenge_description.png)
 
-Hint #1
 ![alt text](hint1.png)
 
-Hint #2
 ![alt text](hint2.png)
+
 
 So basically find account of 'iwd' on the internet.
 
