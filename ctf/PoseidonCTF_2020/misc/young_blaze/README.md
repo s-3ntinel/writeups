@@ -34,4 +34,33 @@ $ cat out
 Poseidon{L1nK_tH4T_$h17_im_0u7}
 ```
 
-Easy challenge but you can learn about different ELF formats and about different stages of source compilation :)
+# Yolo Method #3
+Running 'strings' command on the file reveals interesting string at the beggining.
+```sh
+$ strings Damn
+Ezfp|qz{nY${^Ja]!AJ1}$"J|xJ%`"h
+.text:
+.bss
+.data
+.shstrtab
+.symtab
+.strtab
+.rel.text:
+tiwini3ada!?
+_start
+music
+_exit
+result
+secret
+secret_len
+```
+
+Maybe it's the flag :)
+It's worth the shot to paste it in Magic decoder at [CyberChef](http://icyberchef.com/#recipe=Magic(3,true,false,''))
+
+Analysis revealed that the falg is XOR encrypted with **HEX** key of value **15**
+
+# Flag
+**Poseidon{L1nK_tH4T_$h17_im_0u7}**
+
+Easy challenge but you can learn about different ELF formats and about different stages of compilation :)
