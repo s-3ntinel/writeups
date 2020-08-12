@@ -15,7 +15,7 @@ Very good tool to find accounts on the internet is: [Sherlock](https://github.co
 $ python3 sherlock iwd --print-found > accounts.txt
 ```
 
-Searching for account 'iwd' yielded many results but none of them seemed to give answer to the challenge, so i started from scratch.
+Searching for account `iwd` yielded many results but none of them seemed to give answer to the challenge, so i started from scratch.
 
 # Searching manually
 I searched for the official website of the team that made this ctf: [from Sousse, with love](https://www.sousse.love/)
