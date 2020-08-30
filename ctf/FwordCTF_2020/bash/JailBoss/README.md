@@ -103,7 +103,7 @@ function calculPoint(){
 	echo $1|grep -o "."|wc -l
 }
 function calculA(){
-    echo $1|grep -o "a"|wc -l
+	echo $1|grep -o "a"|wc -l
 }
 ```
 
