@@ -84,18 +84,18 @@ We can assume that `jail.sh` is ran after connecting to server and that `taskFwo
 
 ## The script
 We can see that the script asks for input.
-```
+```sh
 read -p ">> " input ;
 ```
 
 Then script checks if out input consists only of certain characters `.` `/` `:space:` `?` `a`
 Those are only allowed characters.
-```
+```sh
 if echo -n "$input"| grep -v -E "^(\.|\/| |\?|a)*$" ;then
 ```
 
 Then we use defined functions
-```
+```sh
 function calculSlash(){
 	echo $1|grep -o "/"|wc -l
 }
@@ -109,7 +109,7 @@ function calculA(){
 
 to find out number of appereances of characters `/` `.` `a`
 Notice how the script is not checking counts of `:space:` or `?`
-```
+```sh
 pts=$(calculPoint $input)
 slash=$(calculSlash $input)
 nbA=$(calculA $input)
@@ -117,14 +117,14 @@ nbA=$(calculA $input)
 
 Then we check number of appereances.
 We can you maximum of 2x`.`, 1x`/` and 1x`a`
-```
+```sh
 if [[ $pts -gt 2 || $slash -gt 1 || $nbA -gt 1 ]];then
 ```
 
 If the condition is satisfied, script calls `eval` with our input.
 This is a dangerous builtin command that shouldn't be used with user input.
 We can potentionaly run "any" command we want with this
-```
+```sh
 eval "$input"
 ```
 
@@ -141,7 +141,7 @@ which can resolve to
 
 Here is a catch.
 When scripts evaluates function
-```
+```sh
 function calculPoint(){
 	echo $1|grep -o "."|wc -l
 }
@@ -150,17 +150,17 @@ with our input `./????????????` it checks for occurence of `.` which in regex me
 How can we solve this?
 
 The solution is in
-```
+```sh
 pts=$(calculPoint $input)
 ```
 and respective
-```
+```sh
 function calculPoint(){
 	echo $1|grep -o "."|wc -l
 }
 ```
 
-The function only evaluates the first argument `$1` from our input (wchich was our entire input string so far). But we can use `:space:` to divide our input into 2 words. First word can be `.` which evaluates to count `1` since we only used 1 character and second word can be our payload `./????????????`.
+The function only evaluates the first argument `$1` from our input (which was our entire input string so far). But we can use `:space:` to divide our input into 2 words. First word can be `.` which evaluates to count `1` since we only used 1 character and second word can be our payload `./????????????`.
 
 Together
 `. ./????????????`
