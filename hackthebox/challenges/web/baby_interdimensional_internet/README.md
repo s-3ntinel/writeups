@@ -144,8 +144,8 @@ As an example we can start lightly to confirm we can control the `recipe`. An ex
 
 ```json
 {
-    'ingredient': 'our_var',
-    'measurements': '1337'
+    "ingredient": "our_var",
+    "measurements": "1337"
 }
 ```
 
