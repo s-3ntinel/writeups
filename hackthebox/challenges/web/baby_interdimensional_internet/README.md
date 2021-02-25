@@ -5,11 +5,11 @@ aw man, aw geez, my grandpa rick is passed out from all the drinking again, wher
 ## Looking around
 When we visit the website in a browser, we see this.
 
-![website](./site.png)
+![website](./site.PNG)
 
 There is a number that seems to change everytime we refresh the page. First thing we are going to do is look at the source.
 
-![website source](./source.png)
+![website source](./source.PNG)
 
 We can see there is a hint for a `/debug` page where we find the source for the challenge.
 
