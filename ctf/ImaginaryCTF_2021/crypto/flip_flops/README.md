@@ -67,7 +67,7 @@ print("Out of operations!")
 ## Methodology
 Challenge name tells us this is a CBC bit flipping attack. We can encrypt and decrypt hex strings. Block size is 16 bytes. The goal is to have `gimmeflag` substring in final decrypted string but we cannot use it while encrypting, because it will get blocked. We can do a bit flipping attack as shown in the image.
 
-![graph](./graph.PNG)
+![graph](./graph.png)
 
 Our input string will contain more than 16 bytes as to create 2 blocks, and our desired string will be in the second block. This way we can manipulate with the first block to flip bits in the second block.
 
