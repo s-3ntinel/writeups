@@ -82,7 +82,7 @@ Block1: `AAAAAAAAAAAAAAAA`
 
 Block2: `fimmeflag` + padding
 
-By manipulating the first byte in the first block of ciphertext, we will subsequently manipulate the first byte of the second block. We have to change `f` to a `g` to produce a string `gimmeflag`.
+By manipulating the first byte in the first block of ciphertext, we will subsequently manipulate the first byte of the second plaintext block. We have to change `f` to a `g` to produce a string `gimmeflag`.
 
 `f`: 01100110
 
