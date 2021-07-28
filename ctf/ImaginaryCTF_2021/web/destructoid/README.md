@@ -112,8 +112,6 @@ r = requests.get('https://destructoid.chal.imaginaryctf.org/', headers=h)
 print(r.content.decode())
 ```
 
-Pipe the output to a file. For me the file contained 70 words. I had to manually scan the file and remove the remaining correct words that weren't in the `words_alpha.txt`. Then go thought each misspelled word and mark down the wrong letter.
-
 ## Loot
 ![loot](./loot.PNG)
 
