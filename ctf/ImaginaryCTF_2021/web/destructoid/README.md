@@ -73,7 +73,7 @@ We will chain the magic methods to execute what we want.
 `__toString` will get called when we `echo` an object.
 
 
-We start with `Y` and set `$secret` to `$this` so as to echo itself (class Y). Then the `__toString` of Y will be called and set `printflag` to `true` and create `new X` which we don't care about (this trigger the printing of `No!`). The in the unserialization payload we also set some arbitrary variable to `new X("flag")`. This create new object of `X`, we already have `$printflag` set to `true` and we get the flag.
+We start with `Y` and set `$secret` to `$this` so as to echo itself (class Y by `__wakeup` function). Then the `__toString` of Y will be called and set `printflag` to `true` and create `new X` which we don't care about (this trigger the printing of `No!`). The in the unserialization payload we also set some arbitrary variable to `new X("flag")`. This create new object of `X`, we already have `$printflag` set to `true` and we get the flag.
 
 ## Code
 ### `unser.php`
